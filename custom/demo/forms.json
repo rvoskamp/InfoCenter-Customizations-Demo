@@ -1,0 +1,112 @@
+{
+	"forms": [
+		{
+			"data": {
+				"fldtype": "form",
+				"name": "time_sheet",
+				"prompt": "Time Sheet",
+				"localonly": true,
+				"defs": [{
+						"fldtype": "edit",
+						"name": "CLIENT_NAME",
+						"prompt": " ",
+						"sqlinfo": "MATTER.CLIENT_ID.CLIENT_NAME;DOCSADM.CLIENT.SYSTEM_ID",
+						"flags": 524292
+					},
+					{
+						"fldtype": "edit",
+						"name": "CLIENT_ID",
+						"prompt": "Client",
+						"lookup": "CLIENT",
+						"sqlinfo": "MATTER.CLIENT_ID.CLIENT_ID;DOCSADM.CLIENT.SYSTEM_ID",
+						"flags": 78
+					},
+					{
+						"fldtype": "edit",
+						"name": "MATTER_NAME",
+						"prompt": " ",
+						"sqlinfo": "MATTER.MATTER_NAME;DOCSADM.MATTER.SYSTEM_ID",
+						"flags": 524292
+					},
+					{
+						"fldtype": "edit",
+						"name": "MATTER_ID",
+						"prompt": "Matter",
+						"lookup": "MATTER",
+						"sqlinfo": "MATTER.MATTER_ID;DOCSADM.MATTER.SYSTEM_ID",
+						"flags": 78
+					},
+					{
+						"fldtype": "checkbox",
+						"name": "BILLABLE",
+						"prompt": "Billable",
+						"value": "N",
+						"checkedtrigger": "Y",
+						"uncheckedtrigger": "N",
+						"flags": "0x00000004"
+					},
+					{
+						"fldtype": "edit",
+						"name": "TIME",
+						"prompt": "Time spent",
+						"flags": "0x00000004"
+					}
+				]
+			}
+		},
+		{
+			"data": {
+				"fldtype": "form",
+				"name": "rolodex_card",
+				"localonly": true,
+				"defs": [{
+						"fldtype": "edit",
+						"name": "SYSTEM_ID",
+						"prompt": "SYSTEM_ID",
+						"flags": "0x00080000"
+					},
+					{
+						"fldtype": "edit",
+						"name": "USER_ID",
+						"prompt": "User Id",
+						"flags": "0x00080000"
+					},
+					{
+						"fldtype": "edit",
+						"name": "FULL_NAME",
+						"prompt": "Full name",
+						"maxchars": "120",
+						"flags": "0x00080000"
+					},
+					{
+						"fldtype": "edit",
+						"name": "EMAIL_ADDRESS",
+						"prompt": "Email",
+						"maxchars": "120",
+						"flags": "0x00080000"
+					},
+					{
+						"fldtype": "edit",
+						"name": "PHONE",
+						"prompt": "Phone",
+						"maxchars": "120",
+						"flags": "0x00080000"
+					},
+					{
+						"fldtype": "edit",
+						"name": "LAST_LOGIN_DATE",
+						"prompt": "LAST_LOGIN_DATE",
+						"datatype": "8",
+						"flags": "0x00080000"
+					},
+					{
+						"fldtype": "edit",
+						"name": "PRIMARY_GROUP",
+						"prompt": "PRIMARY_GROUP",
+						"flags": "0x00080000"
+					}
+				]
+			}
+		}
+	]
+}

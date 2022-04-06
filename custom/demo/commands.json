@@ -1,0 +1,24 @@
+{
+	"commands": [
+		{
+			"cmd": "punch_clock",
+			"label": "Punch clock",
+			"type": ["container"]
+		},
+		{
+			"cmd": "time_sheet",
+			"label": "Time sheet",
+			"type": ["container", "properties"]
+		},
+		{
+			"cmd": "rolodex",
+			"label": "Rolodex",
+			"type": ["container", "properties"]
+		},
+		{
+			"cmd": "stock_ticker",
+			"label": "Stock ticker",
+			"type": ["container"]
+		}
+	]
+}
