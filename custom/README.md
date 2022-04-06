@@ -44,4 +44,4 @@ We have provided a template to help with the initial experience. The contents wi
 
 **demo** is a folder that contains self-contained customizations
 
-See details about the contents of the *demo* folder [here](README.md)
+See details about the contents of the *demo* folder [here](/demo/README.md)
