@@ -6,7 +6,7 @@ Each folder within the *custom* folder will be presented to the client as a self
 
 Since each folder can support one or many customizations, you should name it properly to quickly identify it's content.
 
-**IMPORTANT** `The name must not contain any of these reserved characters: Space, Comma, Slash, Period`
+**IMPORTANT** The name must not contain any of these reserved characters: `Space` , `Comma` , `Slash` , `Period`
 
 ## Getting started
 InfoCenter allows customizations at both the client and REST API sides. To take full advantage this capability you should become familiar with JavaScript, JSON and Python.
