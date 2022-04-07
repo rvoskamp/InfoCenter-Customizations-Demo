@@ -35,6 +35,7 @@ See the *demo* menu definitions [here](commands.json)
 **code.js** is a JavaScript file used to implement the code behind all the menu items defined in *commands.json*
 
 It starts by associating customizations with the appropriate *vendor* (folder name)
+
 **IMPORTANT**:
 The name must not contain any of these reserved characters: Space, Comma, Slash, Period
 ```js
