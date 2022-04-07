@@ -4,8 +4,9 @@ InfoCenter supports **multiple** customizations by using a simple folder structu
 
 Each folder within the *custom* folder will be presented to the client as a self-contained customization. The client will then retrieve the required resources from each folder and incorporate them giving them a consistent look and feel.
 
-Since each folder can support one or many customizations, it is import to name it properly to quickly identify it's content.
+Since each folder can support one or many customizations, you should name it properly to quickly identify it's content.
 
+**IMPORTANT** `The name must not contain any of these reserved characters: Space, Comma, Slash, Period`
 
 ## Getting started
 InfoCenter allows customizations at both the client and REST API sides. To take full advantage this capability you should become familiar with JavaScript, JSON and Python.
