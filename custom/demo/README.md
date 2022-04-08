@@ -21,6 +21,12 @@ Each defintion requires:
 - ***label*** Name of the menu item
 - ***type*** List of menu lists that the definition will appear in
 
+| *type*     | Location                                    |
+| ---------- | ------------------------------------------- |
+| container  | Menu bar across the top of a container view |
+| properties | Dropdown menu of the properties view        |
+
+
 ```json
 {
 	"cmd": "hello_world",
@@ -57,11 +63,11 @@ The *enable* function is evaluated by the client to determine if it should displ
 
 To help with the determination logic the client supplies the following parameters:
 
-| Name    | Description                      |
-| ------- | -------------------------------- |
-| parent  | Current location                 |
-| list    | Array of selected items (if any) |
-| rights  | User's rights                    |
+| Parameter | Description                      |
+| --------- | -------------------------------- |
+| parent    | Current location                 |
+| list      | Array of selected items (if any) |
+| rights    | User's rights                    |
 
 ```js
 ICC.demo = {
@@ -80,10 +86,10 @@ The *do* function is executed when the menu item is selected by the user.
 
 To help with the determination logic the client supplies the following parameters:
 
-| Name    | Description                      |
-| ------- | -------------------------------- |
-| parent  | Current location                 |
-| list    | Array of selected items (if any) |
+| Parameter | Description                      |
+| --------- | -------------------------------- |
+| parent    | Current location                 |
+| list      | Array of selected items (if any) |
 ```js
 ICC.demo = {
     hello_world: {
@@ -160,7 +166,7 @@ Syntax: runform(*form defaults*,*vendor*,*form name*,*title*)
         ICC.globals.notify.warning('Custom Code Says', `err: ${err.toString()}`);
     }
 ```
-Code execution is suspended until the user is finished and dismisses the form, Ok/Cancel. At this point the execution will resumes with *res* containing the response from the user's interaction.
+Code execution is suspended until the user is finished and dismisses the form, Ok/Cancel. At this point the execution resumes with *res* containing the response from the user's interaction.
 
 See the *demo* form interactions [here](code.js)
 
