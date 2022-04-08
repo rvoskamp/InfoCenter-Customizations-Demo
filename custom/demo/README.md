@@ -1,5 +1,5 @@
 # InfoCenter Customization Folder
-The contents of this folder will allow the interaction with the user to be customized.  This includes adding contextual menu items, execute custom actions and provide custom forms when specific user interaction is required.
+The contents of this folder allows you to customize the interaction with the user.  This includes adding contextual menu items, executing custom actions and providing custom forms when specific user interaction is required.
 
 ## Contents 
 >| File            | Description                    |
@@ -14,12 +14,12 @@ The contents of this folder will allow the interaction with the user to be custo
 ## Getting started
 
 ### Adding a menu item
-**commands.json** is a JSON file used to provide a list of menu definitions to the client.
+**commands.json** is a JSON file that provides a list of menu definitions to the client.
 
-Each defintion will require:
-- ***cmd*** Command reference (this is will be used in *code.js*)
+Each defintion requires:
+- ***cmd*** Command reference (This is used in *code.js*)
 - ***label*** Name of the menu item
-- ***type*** List of which menu lists it should appear in
+- ***type*** List of menu lists that the definition will appear in
 
 ```json
 {
@@ -31,13 +31,11 @@ Each defintion will require:
 See the *demo* menu definitions [here](commands.json)
 
 
-### Enabling menu items and actions taken on their selection
-**code.js** is a JavaScript file used to implement the code behind all the menu items defined in *commands.json*
+### Enabling menu items and the actions taken on their selection
+**code.js** is a JavaScript file that is used to implement the code behind all the menu items defined in *commands.json*
 
 It starts by associating customizations with the appropriate *vendor* (folder name)
 
-**IMPORTANT**:
-The name must not contain any of these reserved characters: Space, Comma, Slash, Period
 ```js
 ICC.demo = {
 
@@ -114,11 +112,11 @@ See the *demo* menu implementations [here](code.js)
 
 ## Adding a custom form
 
-Interaction with the user, either to display or obtain information, will require the use of custom forms. This is accomplished by using **forms.json** to define the forms that will then be referenced in *code.js*. To take full advantage this capability you should become familiar components that make up an eDOCS form.
+Interaction with the user, either to display or obtain information, requires the use of custom forms. This is accomplished by using **forms.json** to define the forms that will then be referenced in *code.js*. To take full advantage of this capability you should be familiar with the components that make up an eDOCS form.
 
 **Adding forms:**
 
-The JSON file consists of an list of forms:
+The JSON file consists of a list of forms:
 ```json
 {
 	"forms": [
@@ -151,7 +149,7 @@ See the *demo* form definitions [here](forms.json)
 
 **Accessing forms:**
 
-Once defined the custom code can ask the client to display the form using runform()
+Once defined, the custom code can ask the client to display the form using runform()
 
 Syntax: runform(*form defaults*,*vendor*,*form name*,*title*)
 ```js
@@ -162,7 +160,7 @@ Syntax: runform(*form defaults*,*vendor*,*form name*,*title*)
         ICC.globals.notify.warning('Custom Code Says', `err: ${err.toString()}`);
     }
 ```
-Code execution is suspened until the user is finished and dismisses the form, Ok/Cancel. At this point the execution will resume with *res* containing the response from the user's interaction.
+Code execution is suspended until the user is finished and dismisses the form, Ok/Cancel. At this point the execution will resumes with *res* containing the response from the user's interaction.
 
 See the *demo* form interactions [here](code.js)
 
@@ -181,9 +179,9 @@ Syntax: restrequest(*method*,*url*)
     }
 ```
 
-If the existing REST API does not support your needs there is the ability to create a predefined SQL and then call into the REST API to execute it.
+If the existing REST API does not support your needs, you can create a predefined SQL and then call into the REST API to execute it.
 
-**sql.py** is a Python file which constructs an SQL statement that will be execute by the REST API before returning the results to the client. *component* is the name associated with the custom statement.
+**sql.py** is a Python file which constructs an SQL statement that will be executed by the REST API before returning the results to the client. *component* is the name associated with the custom statement.
 ```python
 def GetCustomSQL(component,inputDict):
     status = "ok"
@@ -210,7 +208,7 @@ The URL will now refer to the named statement:
     }
 ```
 
-If additional data is external to eDOCS there is the ability to create a custom process to access the data and then call into the REST API to execute it.
+If additional data is external to eDOCS, you can create a custom process to access the data and then call into the REST API to execute it.
 
 **process.py** is a Python file which executes native code before returning the results to the client. *component* is the name associated with the custom process.
 ```python
