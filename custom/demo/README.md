@@ -2,15 +2,15 @@
 The contents of this folder allows you to customize the interaction with the user.  This includes adding contextual menu items, executing custom actions and providing custom forms when specific user interaction is required.
 
 ## Contents 
->| File            | Description                    |
->|-----------------|------------------------------- |
->|**commands.json**| Menu definitions               |
->|**code.js**      | Enabling logic and custom code |
->|**forms.json**   | Custom form definitions        |
->|**sql.py**       | Custom SQL statements          |
->|**process.py**   | Custom process statements      |
+| File            | Description                    |
+|-----------------|------------------------------- |
+|**commands.json**| Menu definitions               |
+|**code.js**      | Enabling logic and custom code |
+|**forms.json**   | Custom form definitions        |
+|**sql.py**       | Custom SQL statements          |
+|**process.py**   | Custom process statements      |
 
-
+---
 ## Getting started
 
 ### Adding a menu item
