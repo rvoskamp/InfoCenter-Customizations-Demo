@@ -236,7 +236,7 @@ def GetCustomProcess(component,inputDict):
     
     return status, strSQL
 ```
-See the *demo* predefined custom SQL statements [here](process.py)
+See the *demo* predefined process statements [here](process.py)
 
 The URL will now refer to the named process:
 ```js
