@@ -19,6 +19,11 @@
 			"cmd": "stock_ticker",
 			"label": "Stock ticker",
 			"type": ["container"]
+		},
+		{
+			"cmd": "review_document",
+			"label": "Review",
+			"type": ["container", "properties"]
 		}
 	]
 }

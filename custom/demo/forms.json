@@ -11,7 +11,7 @@
 						"name": "CLIENT_NAME",
 						"prompt": " ",
 						"sqlinfo": "MATTER.CLIENT_ID.CLIENT_NAME;DOCSADM.CLIENT.SYSTEM_ID",
-						"flags": 524292
+						"flags": "0x00080004"
 					},
 					{
 						"fldtype": "edit",
@@ -19,14 +19,14 @@
 						"prompt": "Client",
 						"lookup": "CLIENT",
 						"sqlinfo": "MATTER.CLIENT_ID.CLIENT_ID;DOCSADM.CLIENT.SYSTEM_ID",
-						"flags": 78
+						"flags": "0x0000004E"
 					},
 					{
 						"fldtype": "edit",
 						"name": "MATTER_NAME",
 						"prompt": " ",
 						"sqlinfo": "MATTER.MATTER_NAME;DOCSADM.MATTER.SYSTEM_ID",
-						"flags": 524292
+						"flags": "0x00080004"
 					},
 					{
 						"fldtype": "edit",
@@ -34,7 +34,7 @@
 						"prompt": "Matter",
 						"lookup": "MATTER",
 						"sqlinfo": "MATTER.MATTER_ID;DOCSADM.MATTER.SYSTEM_ID",
-						"flags": 78
+						"flags": "0x0000004E"
 					},
 					{
 						"fldtype": "checkbox",
@@ -104,6 +104,30 @@
 						"name": "PRIMARY_GROUP",
 						"prompt": "PRIMARY_GROUP",
 						"flags": "0x00080000"
+					}
+				]
+			}
+		},
+		{
+			"data": {
+				"fldtype": "form",
+				"name": "review_document",
+				"localonly": true,
+				"defs": [{
+						"fldtype": "edit",
+						"name": "AUTHOR_ID",
+						"prompt": "Reviewer",
+						"lookup": "PEOPLE",
+						"sqlinfo": "AUTHOR.USER_ID;DOCSADM.PEOPLE.SYSTEM_ID",
+						"flags": "0x0000004E"
+					},
+					{
+						"fldtype": "edit",
+						"name": "DUE_DATE",
+						"datatype": "1",
+						"type": "1",
+						"prompt": "Due date",
+						"flags": "0x0000004E"
 					}
 				]
 			}

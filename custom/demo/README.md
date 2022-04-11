@@ -90,6 +90,18 @@ To help with the determination logic the client supplies the following parameter
 | --------- | -------------------------------- |
 | parent    | Current location                 |
 | list      | Array of selected items (if any) |
+
+
+You can also use the built in notification system (*ICC.globals.notify*) to provide simple feeback to the user:
+| notify    | Icon          | Description         |
+| --------- | ------------- | ------------------- |
+| success   | Success       | Will dismiss itself |
+| confirm   | Success       | User must dismiss   |
+| warning   | Warning       | User must dismiss   |
+| error     | Error         | User must dismiss   |
+| info      | Informational | User must dismiss   |
+
+
 ```js
 ICC.demo = {
     hello_world: {

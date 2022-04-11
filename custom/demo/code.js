@@ -142,7 +142,6 @@ ICC.demo = {
 			}
 		},
 	
-	
 	/* -----------------------------------------------------------------------------
 			Initating an action with no further inputs
 				Access internal information using custom SQL (REST API)
@@ -198,13 +197,18 @@ ICC.demo = {
 			}
 		},
 		
-		
 	/* -----------------------------------------------------------------------------
 			Initating an action with no further inputs
-				Access internal information using custom process (REST API)
+				Access external information using custom process (REST API)
 				Display information using custom forms
 	--------------------------------------------------------------------------------
+		{
+			"cmd": "stock_ticker",
+			"label": "Stock ticker",
+			"type": ["container"]
+		}
 	*/
+	
 		stock_ticker: {
 			
 			enable: function(parent, list, rights) {
@@ -249,6 +253,60 @@ ICC.demo = {
 						//	Syntax:
 						//		notify.warning(<title>,<message>)
 						ICC.globals.notify.warning('Custom Code Says', `err: ${err.toString()}`);
+					}
+				);
+				return true;
+			}
+		},
+
+	/* -----------------------------------------------------------------------------
+			Initating an action with minimal inputs using custom form
+	--------------------------------------------------------------------------------
+		{
+			"cmd": "review_document",
+			"label": "Review",
+			"type": ["container", "properties"]
+		}
+	*/	
+		review_document: {
+			enable: function(parent, list, rights) {
+				if (!!list && list.length == 1){
+					if (list[0].STATUS == "0"){
+						return true;
+					}
+				}
+				return false;
+			},
+			
+			
+			do: function(parent, list) {
+				// Display custom form to the user...
+				//	Syntax:
+				//		runform(<defaults>,<vendor>,<form name>,<title>)
+				//	Note:
+				//		Custom form must be defined in forms.json
+				formDefaults = {}; // Nothing to default
+				ICC.globals.runform(formDefaults, 'demo', 'review_document', 'Review request').then(
+					res => {
+						// Handle response once the form has been dismissed
+						let success = res.success; // true: 'ok', false: 'cancel'
+						if (!!success){
+							// Make the document read-only by updating the profile
+							const data = {"%STATUS": '%MAKE_READ_ONLY'};
+							const url = list[0].type + '/' + list[0].id + '/profile?library=' + list[0].lib;
+							// Have the client issue a fully constructed request to the REST API
+							//	Syntax:
+							//		restrequest(<method>,<url>)
+							ICC.globals.restrequest("PUT", url, data).then(
+								res => {
+									// Refresh the current container to update the profile change
+									ICC.globals.refresh();
+								}, err => {
+									ICC.globals.notify.warning('Custom Code Says', `err: ${err.toString()}`);
+								}
+							);
+							return true;
+						}
 					}
 				);
 				return true;
