@@ -14,7 +14,16 @@ InfoCenter allows customizations at both the client and REST API sides. To take 
 
 
 ### Contents
-We provide a template to help with the initial experience. The contents will demonstrate what is currently available and serve as starting point for your future development.
+We provide a template to help with the initial experience. The examples will demonstrate what is currently available and serve as starting point for your future development.
+
+>| Menu item        | Description                                                    |
+>| ---------------- | -------------------------------------------------------------- |
+>|Punch clock       | Initating an action with no further inputs                     |
+>|Time sheet        | Initating an action with minimal inputs using custom form      |
+>|Rolodex           | Access internal information using custom SQL (REST API)        |
+>|Stock ticker      | Access external information using custom process (REST API)    |
+>|Review            | Modify profile meta data using a REST API request              |
+
 
 **Note:** Internally, the folder name is referred to as *vendor*
 
