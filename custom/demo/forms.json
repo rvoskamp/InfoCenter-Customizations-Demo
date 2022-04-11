@@ -49,6 +49,7 @@
 						"fldtype": "edit",
 						"name": "TIME",
 						"prompt": "Time spent",
+						"datatype": "4",
 						"flags": "0x00000004"
 					}
 				]
@@ -124,8 +125,7 @@
 					{
 						"fldtype": "edit",
 						"name": "DUE_DATE",
-						"datatype": "1",
-						"type": "1",
+						"datatype": "8",
 						"prompt": "Due date",
 						"flags": "0x0000004E"
 					}
