@@ -64,9 +64,9 @@ ICC.demo = {
 				//
 				// Give user informational feedback that something happened
 				//	Syntax:
-				//		notify.info(<title>,<message>)
+				//		notify.success(<title>,<message>)
 				//
-				ICC.globals.notify.info('Punch Clock', `Have a nice day!`);
+				ICC.globals.notify.success('Punch Clock', `Have a nice day!`);
 				return true;
 			}
 		},
@@ -120,15 +120,15 @@ ICC.demo = {
 							//
 							// Give user informational feedback that something happened
 							//	Syntax:
-							//		notify.info(<title>,<message>)
+							//		notify.confirm(<title>,<message>)
 							//
 							action = 'Logged ' + time + ' ' + billable + 'billable hours against:';
 							bodyparts = [];
 							bodyparts.push(`${action}`);
-							bodyparts.push(`${client}`);
-							bodyparts.push(`${matter}`);
+							bodyparts.push(`Client: ${client}`);
+							bodyparts.push(`Matter: ${matter}`);
 							body = bodyparts.join('\r\n');
-							ICC.globals.notify.info('Time Sheet', `${body}`);
+							ICC.globals.notify.confirm('Time Sheet', `${body}`);
 						}
 					}, err => {
 						// Error case
@@ -221,7 +221,7 @@ ICC.demo = {
 				//		custom/process/<vendor>/<process id>?library=<library>  (optional parameters)
 				// Note:
 				//	Only predefined statements will be executed
-				//		<process id> is the access to the defined SQL statement found in process.py
+				//		<process id> is the access to the defined process statements found in process.py
 				
 				const urlParameter = 'https%3A//query1.finance.yahoo.com/v7/finance/quote?symbols=OTEX';
 				const urlRequest = 'custom/process/demo/geturl?library=' + ICC.globals.primarylibrary + '&url=' + urlParameter;

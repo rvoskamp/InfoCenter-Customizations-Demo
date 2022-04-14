@@ -92,14 +92,14 @@ To help with the determination logic the client supplies the following parameter
 | list      | Array of selected items (if any) |
 
 
-You can also use the built in notification system (*ICC.globals.notify*) to provide simple feeback to the user:
-| notify    | Icon          | Description         |
-| --------- | ------------- | ------------------- |
-| success   | Success       | Will dismiss itself |
-| confirm   | Success       | User must dismiss   |
-| warning   | Warning       | User must dismiss   |
-| error     | Error         | User must dismiss   |
-| info      | Informational | User must dismiss   |
+You can also use the built in notification system (*ICC.globals.notify.\<type\>*) to provide simple feeback to the user:
+| Type      |  Description                      |
+| --------- | --------------------------------- |
+| success   | Success, will dismiss itself      |
+| confirm   | Success, user must dismiss        |
+| warning   | Warning, user must dismiss        |
+| error     | Error, user must dismiss          |
+| info      | Informational, user must dismiss  |
 
 
 ```js
@@ -197,7 +197,9 @@ Syntax: restrequest(*method*,*url*)
     }
 ```
 
-If the existing REST API does not support your needs, you can create a predefined SQL and then call into the REST API to execute it.
+If the existing REST API does not support your needs, you can configure custom REST API modules and then call into the REST API to execute them.
+
+### Custom REST API modules
 
 **sql.py** is a Python file which constructs an SQL statement that will be executed by the REST API before returning the results to the client. *component* is the name associated with the custom statement.
 ```python
@@ -253,7 +255,7 @@ See the *demo* predefined process statements [here](process.py)
 The URL will now refer to the named process:
 ```js
     urlParameter = 'https%3A//query1.finance.yahoo.com/v7/finance/quote?symbols=OTEX';
-	urlRequest = 'custom/process/demo/geturl?library=' + ICC.globals.primarylibrary + '&url=' + urlParameter;
+    urlRequest = 'custom/process/demo/geturl?library=' + ICC.globals.primarylibrary + '&url=' + urlParameter;
     ICC.globals.restrequest("GET", urlRequest).then(
     res => {
         
