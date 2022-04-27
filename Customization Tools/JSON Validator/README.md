@@ -1,4 +1,4 @@
-# Using JSON files Within InfoCenter
+# Using JSON files with InfoCenter
 
 InfoCenter customizations uses JSON (*.json*) files for defining some of the components. It is strongly recommend to validate their contents to avoid them being ommitted due to a syntax error.
 
