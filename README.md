@@ -3,7 +3,7 @@ You can customize InfoCenter to include client side menu items and forms. You ca
 
 See details about the contents of the *custom* folder [here](./custom/)
 
-# Installation
+# Installation of sample customizations
 Download the *custom* folder into your installation of the REST API under the *edocs* folder.
 ```
 ..\edocs
@@ -11,3 +11,5 @@ Download the *custom* folder into your installation of the REST API under the *e
     controllers
     custom
 ```
+# Customization Tools
+We've provided tools to help you get started with your own customizations. You should download the *Customization Tools* folder where you will be doing most of your development.
