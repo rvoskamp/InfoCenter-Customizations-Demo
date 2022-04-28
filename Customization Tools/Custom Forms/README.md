@@ -155,6 +155,7 @@ When multiple buttons are defined there may be a need to associate them and have
     }
 ```
 
+---
 
 ## Boxes
 
@@ -164,7 +165,7 @@ When fields are located within a box the tool will support the translation of (C
             "--- Replace with field definitions ---"
         ]
 ```
-**Example:** Associate the "Modify" and "Remove" buttons with the "Add" button
+**Example:** Render the Client and Matter fields under the grouping of "Information"
 ```JSON
     {
         "fldtype": "box",
