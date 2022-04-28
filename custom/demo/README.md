@@ -1,5 +1,5 @@
 # InfoCenter Customization Folder
-The contents of this folder allows you to customize the interaction with the user.  This includes adding contextual menu items, executing custom actions and providing custom forms when specific user interaction is required.
+The contents of this folder allow you to customize the interaction with the user.  This includes adding contextual menu items, executing custom actions and providing custom forms when specific user interaction is required.
 
 ## Contents 
 | File            | Description                    |
@@ -14,7 +14,7 @@ The contents of this folder allows you to customize the interaction with the use
 ## Getting started
 
 ### Adding a menu item
-**commands.json** is a JSON file that provides a list of menu definitions to the client.
+**commands.json** provides a list of menu definitions to the client.
 
 Each defintion requires:
 - ***cmd*** Command reference (This is used in *code.js*)
@@ -40,7 +40,7 @@ See the *demo* menu definitions [here](commands.json)
 ### Enabling menu items and the actions taken on their selection
 **code.js** is a JavaScript file that is used to implement the code behind all the menu items defined in *commands.json*
 
-It starts by associating customizations with the appropriate *vendor* (folder name)
+It starts by associating customizations with the appropriate *vendor* (folder name):
 
 ```js
 ICC.demo = {
@@ -48,7 +48,7 @@ ICC.demo = {
 };
 ```
 
-Then each *cmd* (menu item) must be defined
+Then each *cmd* (menu item) must be defined:
 ```js
 ICC.demo = {
     hello_world: {
@@ -92,7 +92,7 @@ To help with the determination logic the client supplies the following parameter
 | list      | Array of selected items (if any) |
 
 
-You can also use the built in notification system (*ICC.globals.notify.\<type\>*) to provide simple feeback to the user:
+You can also use the built in notification system (*ICC.globals.notify.\<type\>*) to provide simple feedback to the user:
 | Type      |  Description                      |
 | --------- | --------------------------------- |
 | success   | Success, will dismiss itself      |
@@ -180,12 +180,12 @@ Syntax: runform(*form defaults*,*vendor*,*form name*,*title*)
 ```
 Code execution is suspended until the user is finished and dismisses the form, Ok/Cancel. At this point the execution resumes with *res* containing the response from the user's interaction.
 
-See the *demo* form interactions [here](code.js)
+See the *demo* form interactions [here](code.js).
 
 ---
 
 ## Accessing the REST API from within custom code
-During code execution there may be a need to call into the REST API to access additional information. This is done by using restrequest() and properly formed URL.
+During code execution there may be a need to call into the REST API to access additional information. This is done by using restrequest() and a properly formed URL.
 
 Syntax: restrequest(*method*,*url*)
 ```js
@@ -201,7 +201,7 @@ If the existing REST API does not support your needs, you can configure custom R
 
 ### Custom REST API modules
 
-**sql.py** is a Python file which constructs an SQL statement that will be executed by the REST API before returning the results to the client. *component* is the name associated with the custom statement.
+**sql.py** constructs an SQL statement that will be executed by the REST API before returning the results to the client. *component* is the name associated with the custom statement.
 ```python
 def GetCustomSQL(component,inputDict):
     status = "ok"
@@ -263,4 +263,4 @@ The URL will now refer to the named process:
         ICC.globals.notify.warning('Custom Code Says', `err: ${err.toString()}`);
     }
 ```
-See the *demo* REST API interactions [here](code.js)
+See the *demo* REST API interactions [here](code.js).

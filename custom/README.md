@@ -14,22 +14,22 @@ InfoCenter allows customizations at both the client and REST API sides. To take 
 
 
 ### Contents
-We provide a template to help with the initial experience. The examples will demonstrate what is currently available and serve as starting point for your future development.
+We provide a sample to help with the initial experience. The examples below will demonstrate what is currently available and serve as starting point for your future development.
 
 >| Menu item        | Description                                                    |
 >| ---------------- | -------------------------------------------------------------- |
->|Punch clock       | Initating an action with no further inputs                     |
->|Time sheet        | Initating an action with minimal inputs using custom form      |
+>|Punch clock       | Initiate an action with no further inputs                      |
+>|Time sheet        | Initiate an action with minimal inputs using a custom form     |
 >|Rolodex           | Access internal information using custom SQL (REST API)        |
 >|Stock ticker      | Access external information using custom process (REST API)    |
->|Review            | Modify profile meta data using a REST API request              |
+>|Review            | Modify profile metadata using a REST API request               |
 
 
 **Note:** Internally, the folder name is referred to as *vendor*
 
 **Files:**
 
-**sql.py** is a file is used to enable *vendor* access to custom SQL REST API module. Each additional *vendor* must be added manually to [sql.py](./sql.py) before it will work and will require a restart of the REST API
+**sql.py** enables *vendor* access to custom SQL REST API module. Each additional *vendor* must be added manually to [sql.py](./sql.py) before it will work and will require a restart of the REST API
 ```
     if vendor == "demo": #   Simple examples to show what is available
         from edocs.custom.demo.sql import GetCustomSQL
@@ -40,11 +40,11 @@ We provide a template to help with the initial experience. The examples will dem
 ```
 
 
-**process.py** is a file is used to enable *vendor* access to custom Process REST API module. Each additional *vendor* must be added manually to [process.py](./process.py) before it will work and will require a restart of the REST API
+**process.py** enables *vendor* access to custom Process REST API module. Each additional *vendor* must be added manually to [process.py](./process.py) before it will work and will require a restart of the REST API.
 ```
     if vendor == "demo": #   Simple examples to show what is available
         from edocs.custom.demo.process import GetCustomProcess
-#    elif vendor == "<FolderName>": #   Example for how to add another vendor
+#    elif vendor == "<FolderName>": #   Example of how to add another vendor
 #        from edocs.custom.<FolderName>.process import GetCustomProcess
     else:
         return "Not implemented",""

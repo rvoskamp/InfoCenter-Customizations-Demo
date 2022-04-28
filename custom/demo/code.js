@@ -43,7 +43,7 @@ ICC.demo = {
 	
 
 	/* -----------------------------------------------------------------------------
-			Initating an action with no further inputs
+			Initiating an action with no further inputs
 	--------------------------------------------------------------------------------
 		{
 			"cmd": "punch_clock",
@@ -73,7 +73,7 @@ ICC.demo = {
 		
 		
 	/* -----------------------------------------------------------------------------
-			Initating an action with minimal inputs using custom form
+			Initiating an action with minimal inputs using custom form
 	--------------------------------------------------------------------------------
 		{
 			"cmd": "time_sheet",
@@ -143,7 +143,7 @@ ICC.demo = {
 		},
 	
 	/* -----------------------------------------------------------------------------
-			Initating an action with no further inputs
+			Initiating an action with no further inputs
 				Access internal information using custom SQL (REST API)
 				Display information using custom forms
 	--------------------------------------------------------------------------------
@@ -198,7 +198,7 @@ ICC.demo = {
 		},
 		
 	/* -----------------------------------------------------------------------------
-			Initating an action with no further inputs
+			Initiating an action with no further inputs
 				Access external information using custom process (REST API)
 				Display information using custom forms
 	--------------------------------------------------------------------------------
@@ -260,7 +260,7 @@ ICC.demo = {
 		},
 
 	/* -----------------------------------------------------------------------------
-			Initating an action with minimal inputs using custom form
+			Initiating an action with minimal inputs using custom form
 	--------------------------------------------------------------------------------
 		{
 			"cmd": "review_document",
