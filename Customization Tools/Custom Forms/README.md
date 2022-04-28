@@ -86,7 +86,7 @@ The additional *vistriggers* is a list of key-value pairs defining when specific
 
 Although the tool to convert *.frm* files to *'.json'* will support (CMSPush) buttons it's functionality must be added manually. The script trigger, *scripttrigger*, defines which script to execute when the user presses the button.
 ```JSON
-    "scripttrigger": {"script": name of script to execute}
+    "scripttrigger": {"script": "--- Replace with script name (as defined in code.js) ---"}
 ```
 
 **Example:** Run the "hello_world" script when the button is pressed
@@ -113,7 +113,7 @@ The script to execute must be defined in your *code.js* file within the command 
 | *field*        | undefined                                                                                |
 | *control*      | undefined                                                                                |
 
-To interact with Access and manipulate individual fields on the form *form* parameter provides an interface to the fields on the form
+To manipulate individual fields on the form the *form* parameter provides an interface to the fields.
 ```JS
     form.getFieldValue(field_name);
     form.setFieldValue(field_name,value);
@@ -153,4 +153,51 @@ When multiple buttons are defined there may be a need to associate them and have
         "scripttrigger": { "script": "remove_script" },
         "extensioinparent": "ADD_ENTRY"
     }
+```
+
+
+## Boxes
+
+When fields are located within a box the tool will support the translation of (CMSBox) boxes but the fields must be added manually. Move the field definitions into the list of fields.
+```JSON
+    "fields": [
+            "--- Replace with field definitions ---"
+        ]
+```
+**Example:** Associate the "Modify" and "Remove" buttons with the "Add" button
+```JSON
+    {
+        "fldtype": "box",
+        "x": 17,
+        "y": 286,
+        "w": 497,
+        "h": 107,
+        "flags": 0,
+        "prompt": "Information",
+        "fields": [
+            {
+                "fldtype": "edit",
+                "x": 282,
+                "y": 58,
+                "w": 232,
+                "h": 21,
+                "flags": 524292,
+                "name": "CLIENT_NAME",
+                "prompt": "Full Name",
+                "sqlinfo": "MATTER.CLIENT_ID.CLIENT_NAME;DOCSADM.CLIENT.SYSTEM_ID"
+            },
+            {
+                "fldtype": "edit",
+                "x": 282,
+                "y": 83,
+                "w": 232,
+                "h": 21,
+                "flags": 524292,
+                "name": "MATTER_NAME",
+                "prompt": "Full Name",
+                "sqlinfo": "MATTER.MATTER_NAME;DOCSADM.MATTER.SYSTEM_ID",
+                "maxchars": "60"
+            }
+        ]
+    },
 ```
