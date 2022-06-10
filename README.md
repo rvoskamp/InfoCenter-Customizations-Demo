@@ -12,4 +12,4 @@ Download the *custom* folder into your installation of the REST API under the *e
     custom
 ```
 # Customization Tools
-We've provided tools to help you get started with your own customizations. You should download the *Customization Tools* folder whereever you will be doing most of your development.
+We've provided tools to help you get started with your own customizations. You should download the *Customization Tools* folder wherever you will be doing most of your development.
