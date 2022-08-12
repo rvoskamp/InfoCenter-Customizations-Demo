@@ -12,8 +12,8 @@ Download the *custom* folder to your installation of the REST API under the *edo
     custom
 ```
 
-:sparkles:
-##  **New for 22.3**
+
+## :sparkles: **New for 22.3**
 # Configuration requirements for customizations
 
 We have introduced a new "Customizations" section in the RESTAPI.JSON file to set access and security for each customization.
